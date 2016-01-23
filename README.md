@@ -1,12 +1,12 @@
 Ansible Role - Sudoers Manager
-=========
+==============================
 
 Ansible role created to manage `sudoers.d` profiles.
 
 Requirements
 ------------
 
-TODO
+None.
 
 Role Variables
 --------------
@@ -22,6 +22,11 @@ Example Playbook
 ----------------
 
 TODO
+
+Development
+-----------
+
+Please see the DEVELOPMENT.md file for more information.
 
 License
 -------
