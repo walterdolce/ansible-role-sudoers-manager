@@ -11,6 +11,8 @@ Requirements
 - Git installed on your system
 - Ruby installed on your system
 - The Bundler gem
+- Virtual Box
+- Vagrant
 
 Getting started
 ---------
