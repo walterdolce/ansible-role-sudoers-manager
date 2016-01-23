@@ -16,3 +16,6 @@
 
 # PyCharm CE
 .idea/
+
+# Ruby
+.ruby-version
