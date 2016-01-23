@@ -13,13 +13,23 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+---
+driver:
+  name: vagrant
+  synced_folders:
+    - ['./test/sudoers-manager', "/tmp/sudoers-manager", 'create: true']
 
-# PyCharm CE
-.idea/
+provisioner:
+  ansible_inventory_file: 'test/inventory'
+  ansible_verbose: true
+  name: ansible_playbook
+  roles_path: './sudoers-manager'
+  playbook: './test/test.yml'
 
-# Ruby
-.ruby-version
+platforms:
+  - name: centos-7.1
 
-# Test-kitchen
-.kitchen/
-.kitchen.local.yml
+suites:
+  - name: default
+    run_list:
+    attributes:

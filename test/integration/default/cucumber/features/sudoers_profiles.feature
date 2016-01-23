@@ -13,13 +13,12 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+Feature: Sudoers profile
+  In order to easily and securely manage system users on a server
+  As a sysadmin
+  I want to provide and manage sudoers profiles for system users
 
-# PyCharm CE
-.idea/
-
-# Ruby
-.ruby-version
-
-# Test-kitchen
-.kitchen/
-.kitchen.local.yml
+  Scenario: Sudoers profile is set for an existing user
+    Given a user "john" exists within the system
+    When I provision the server
+    Then a sudoers profile will be set for the user "john"

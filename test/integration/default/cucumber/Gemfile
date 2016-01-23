@@ -13,13 +13,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+source 'https://rubygems.org'
 
-# PyCharm CE
-.idea/
-
-# Ruby
-.ruby-version
-
-# Test-kitchen
-.kitchen/
-.kitchen.local.yml
+gem 'cucumber', '2.3.2'
+gem 'rspec-expectations', '3.4.0'

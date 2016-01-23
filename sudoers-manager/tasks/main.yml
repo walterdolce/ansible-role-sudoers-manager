@@ -13,13 +13,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-
-# PyCharm CE
-.idea/
-
-# Ruby
-.ruby-version
-
-# Test-kitchen
-.kitchen/
-.kitchen.local.yml
+---
+- name: Create sudoers profile
+  template:
+    src: "{{ sudoers_profile_template_path }}{{ sudoers_profile }}"
+    dest: "/etc/sudoers.d/{{ sudoers_profile }}"
+  when: sudoers_profile_template_path is defined and sudoers_profile is defined

@@ -13,13 +13,10 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+source 'https://rubygems.org'
 
-# PyCharm CE
-.idea/
-
-# Ruby
-.ruby-version
-
-# Test-kitchen
-.kitchen/
-.kitchen.local.yml
+group :development do
+    gem 'test-kitchen', '1.5.0'
+    gem 'kitchen-vagrant', '0.19.0'
+    gem 'kitchen-ansible', '0.0.36'
+end
