@@ -28,4 +28,4 @@ Feature: Sudoers profiles
     And a user "alan" exists within the system
     When I provision the server
     Then a sudoers profile will be set for the user "john"
-    Then a sudoers profile will be set for the user "alan"
+    And a sudoers profile will be set for the user "alan"

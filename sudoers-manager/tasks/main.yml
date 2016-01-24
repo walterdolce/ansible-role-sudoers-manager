@@ -18,5 +18,5 @@
   template:
     src: "{{ item.value.template_path }}{{ item.value.profile_name }}"
     dest: "{{ item.value.profile_dir }}{{ item.value.profile_name }}"
-  when: item.value.template_path is defined and item.value.profile_name is defined and item.value.profile_dir is defined
-  with_dict: sudoers_profiles
+  when: sudoers_manager_sudoers_profiles is defined and item.value.template_path is defined and item.value.profile_name is defined and item.value.profile_dir is defined
+  with_dict: sudoers_manager_sudoers_profiles

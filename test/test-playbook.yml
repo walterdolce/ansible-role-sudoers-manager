@@ -19,7 +19,7 @@
   roles:
     - {
       role: sudoers-manager,
-      sudoers_profiles: {
+      sudoers_manager_sudoers_profiles: {
         john: {
               profile_dir: '/etc/sudoers.d/',
               profile_name: 'john',
