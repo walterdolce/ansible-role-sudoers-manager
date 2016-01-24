@@ -13,22 +13,3 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
----
-- hosts: localhost
-  remote_user: root
-  roles:
-    - {
-      role: sudoers-manager,
-      sudoers_profiles: {
-        john: {
-              profile_dir: '/etc/sudoers.d/',
-              profile_name: 'john',
-              template_path: '/tmp/sudoers-manager/templates/'
-           },
-        alan: {
-              profile_dir: '/etc/sudoers.d/',
-              profile_name: 'alan',
-              template_path: '/tmp/sudoers-manager/templates/'
-           }
-        }
-      }
