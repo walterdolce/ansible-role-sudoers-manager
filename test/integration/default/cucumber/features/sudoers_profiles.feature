@@ -13,12 +13,19 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-Feature: Sudoers profile
+Feature: Sudoers profiles
   In order to easily and securely manage system users on a server
   As a sysadmin
   I want to provide and manage sudoers profiles for system users
 
-  Scenario: Sudoers profile is set for an existing user
+  Scenario: A sudoers profile is set for an existing user
     Given a user "john" exists within the system
     When I provision the server
     Then a sudoers profile will be set for the user "john"
+
+  Scenario: A sudoers profile is set for multiple existing users
+    Given a user "john" exists within the system
+    And a user "alan" exists within the system
+    When I provision the server
+    Then a sudoers profile will be set for the user "john"
+    Then a sudoers profile will be set for the user "alan"

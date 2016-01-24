@@ -14,8 +14,9 @@
 #   limitations under the License.
 #
 ---
-- name: Create sudoers profile
+- name: Create sudoers profiles
   template:
-    src: "{{ sudoers_profile_template_path }}{{ sudoers_profile }}"
-    dest: "/etc/sudoers.d/{{ sudoers_profile }}"
-  when: sudoers_profile_template_path is defined and sudoers_profile is defined
+    src: "{{ item.value.template_path }}{{ item.value.profile_name }}"
+    dest: "{{ item.value.profile_dir }}{{ item.value.profile_name }}"
+  when: item.value.template_path is defined and item.value.profile_name is defined and item.value.profile_dir is defined
+  with_dict: sudoers_profiles
