@@ -13,19 +13,19 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-Feature: Sudoers profiles
+Feature: No sudoers profiles
   In order to easily and securely manage system users on a server
   As a sysadmin
   I want to provide and manage sudoers profiles for system users
 
-  Scenario: A sudoers profile is set for an existing user
+  Scenario: Sudoers profile don't get set when role vars are missing
     Given a user "john" exists within the system
-    When I provision the server
-    Then a sudoers profile will be set for the user "john"
-
-  Scenario: A sudoers profile is set for multiple existing users
-    Given a user "john" exists within the system
+    But the "profile_dir" parameter is not set in the role's config
     And a user "alan" exists within the system
+    But the "template_path" parameter is not set in the role's config
+    And a user "ben" exists within the system
+    But the "profile_name" parameter is not set in the role's config
     When I provision the server
-    Then a sudoers profile will be set for the user "john"
-    And a sudoers profile will be set for the user "alan"
+    Then a sudoers profile will not be set for the user "john"
+    And a sudoers profile will not be set for the user "alan"
+    And a sudoers profile will not be set for the user "ben"

@@ -13,25 +13,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-Given(/^a user "([^"]*)" exists within the system$/) do |user|
-    unless user_exists(user)
-        `useradd #{user}`
-    end
-    expect(
-        user_exists(user)
-    ).to eq(true)
-end
-
-When(/^I provision the server$/) do
-    # Placeholder step
-end
-
-Then(/^a sudoers profile will be set for the user "([^"]*)"$/) do |sudoers_profile|
-    expect(
-        File.exists? "/etc/sudoers.d/#{sudoers_profile}"
-    ).to be(true)
-end
-
-def user_exists(user)
-    `cat /etc/passwd | cut -d: -f1`.split("\n").include? user
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: 'useradd john; useradd alan;'
 end

@@ -24,12 +24,29 @@ provisioner:
   ansible_verbose: true
   name: ansible_playbook
   roles_path: './sudoers-manager'
-  playbook: './test/test-playbook.yml'
 
 platforms:
   - name: centos-7.1
 
 suites:
-  - name: default
-    run_list:
-    attributes:
+  - name: single-profile
+    driver:
+      provision: true
+      vagrantfiles:
+        - './test/integration/single-profile/cucumber/Vagrantfile'
+    provisioner:
+      playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
+  - name: multiple-profiles
+    driver:
+      provision: true
+      vagrantfiles:
+        - './test/integration/multiple-profiles/cucumber/Vagrantfile'
+    provisioner:
+      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
+  - name: noop
+    driver:
+      provision: true
+      vagrantfiles:
+        - './test/integration/noop/cucumber/Vagrantfile'
+    provisioner:
+      playbook: './test/integration/noop/cucumber/test-playbook.yml'
