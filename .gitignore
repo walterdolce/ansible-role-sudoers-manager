@@ -20,6 +20,9 @@
 # Ruby
 .ruby-version
 
+# Ruby - Bundler
+.bundle/
+
 # Test-kitchen
 .kitchen/
 .kitchen.local.yml
