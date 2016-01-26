@@ -22,8 +22,8 @@ driver:
 provisioner:
   ansible_inventory_file: 'test/test-inventory'
   ansible_verbose: true
+  ansible_verbosity: 4
   name: ansible_playbook
-  roles_path: './sudoers-manager'
 
 platforms:
   - name: centos-7.1
