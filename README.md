@@ -1,7 +1,7 @@
 Ansible Role - Sudoers Manager
 ==============================
 
-Ansible role created to manage `sudoers.d` profiles.
+Ansible role that manages `sudoers.d` profiles.
 
 Requirements
 ------------
