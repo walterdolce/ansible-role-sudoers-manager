@@ -18,5 +18,5 @@ source 'https://rubygems.org'
 group :development do
     gem 'test-kitchen', '1.5.0'
     gem 'kitchen-vagrant', '0.19.0'
-    gem 'kitchen-ansible', '0.0.36'
+    gem 'kitchen-ansible', '0.0.38', :git => 'https://github.com/walterdolce/kitchen-ansible.git'
 end

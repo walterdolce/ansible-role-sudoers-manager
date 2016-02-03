@@ -22,11 +22,11 @@
       sudoers_manager_sudoers_profiles: {
         john: {
               profile_name: 'john',
-              template_path: '/tmp/sudoers-manager/templates/'
+              template_path: '/tmp/fixtures/sudoers-manager/templates/'
            },
         ben: {
               profile_dir: '/etc/sudoers.d/',
-              template_path: '/tmp/sudoers-manager/templates/'
+              template_path: '/tmp/fixtures/sudoers-manager/templates/'
            },
         alan: {
               profile_dir: '/etc/sudoers.d/',

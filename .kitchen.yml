@@ -17,7 +17,7 @@
 driver:
   name: vagrant
   synced_folders:
-    - ['./test/sudoers-manager', "/tmp/sudoers-manager", 'create: true']
+    - ['./test/fixtures/sudoers-manager', "/tmp/fixtures/sudoers-manager", 'create: true']
 
 provisioner:
   ansible_inventory_file: 'test/test-inventory'
@@ -33,20 +33,20 @@ suites:
     driver:
       provision: true
       vagrantfiles:
-        - './test/integration/single-profile/cucumber/Vagrantfile'
+        - './test/integration/single-profile/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
   - name: multiple-profiles
     driver:
       provision: true
       vagrantfiles:
-        - './test/integration/multiple-profiles/cucumber/Vagrantfile'
+        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
   - name: noop
     driver:
       provision: true
       vagrantfiles:
-        - './test/integration/noop/cucumber/Vagrantfile'
+        - './test/integration/noop/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/noop/cucumber/test-playbook.yml'

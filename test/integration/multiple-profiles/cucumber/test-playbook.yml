@@ -23,12 +23,12 @@
         john: {
               profile_dir: '/etc/sudoers.d/',
               profile_name: 'john',
-              template_path: '/tmp/sudoers-manager/templates/'
+              template_path: '/tmp/fixtures/sudoers-manager/templates/'
            },
         alan: {
               profile_dir: '/etc/sudoers.d/',
               profile_name: 'alan',
-              template_path: '/tmp/sudoers-manager/templates/'
+              template_path: '/tmp/fixtures/sudoers-manager/templates/'
            }
         }
       }
