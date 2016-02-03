@@ -25,7 +25,6 @@ indent_size = 4
 indent_style = space
 trim_trailing_whitespace = true
 
-# Indentation override for all JS under lib directory
-[*.yml]
+[*.{yml,rb}]
 indent_style = space
 indent_size = 2
