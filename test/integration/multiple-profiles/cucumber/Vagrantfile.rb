@@ -13,6 +13,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-Vagrant.configure("2") do |config|
-  config.vm.provision "shell", inline: 'useradd john; useradd alan;'
+Vagrant.configure('2') do |config|
+  config.vm.provision 'shell', inline: 'useradd john; useradd alan;'
 end

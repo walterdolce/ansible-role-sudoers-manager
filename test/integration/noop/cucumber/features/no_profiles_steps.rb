@@ -14,23 +14,23 @@
 #   limitations under the License.
 #
 Given(/^a user "([^"]*)" exists within the system$/) do |user|
-    expect(user_exists(user)).to eq(true)
+  expect(user_exists(user)).to eq(true)
 end
 
 Given(/^the "([^"]*)" parameter is not set in the role's config$/) do |_|
-    # Placeholder step
+  # Placeholder step
 end
 
 When(/^I provision the server$/) do
-    # Placeholder step
+  # Placeholder step
 end
 
 Then(/^a sudoers profile will not be set for the user "([^"]*)"$/) do |sudoers_profile|
-    expect(
-        File.exists? "/etc/sudoers.d/#{sudoers_profile}"
-    ).to be(false)
+  expect(
+    File.exist?("/etc/sudoers.d/#{sudoers_profile}")
+  ).to be(false)
 end
 
 def user_exists(user)
-    `cat /etc/passwd | cut -d: -f1`.split("\n").include? user
+  `cat /etc/passwd | cut -d: -f1`.split("\n").include? user
 end
