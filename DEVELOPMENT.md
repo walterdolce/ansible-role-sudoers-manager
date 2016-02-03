@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/walterdolce/ansible-role-sudoers-manager.svg?branch=master)](https://travis-ci.org/walterdolce/ansible-role-sudoers-manager)
+
 Development
 ===========
 
