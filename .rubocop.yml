@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - .*
+    - bin/*
+    - test/integration/**/Vagrantfile.rb
+Metrics/LineLength:
+  Max: 120
