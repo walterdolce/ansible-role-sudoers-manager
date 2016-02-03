@@ -18,6 +18,11 @@ source 'https://rubygems.org'
 group :development do
   gem 'kitchen-ansible', '0.0.38', git: 'https://github.com/walterdolce/kitchen-ansible.git'
   gem 'kitchen-vagrant', '0.19.0'
+  gem 'rake', '10.5.0'
   gem 'rubocop', '0.36.0'
   gem 'test-kitchen', '1.5.0'
+end
+
+group :docker do
+    gem 'kitchen-docker', '2.3.0'
 end
