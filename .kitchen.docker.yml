@@ -16,6 +16,5 @@
 ---
 driver:
   name: docker
-  driver_config:
-    volume:
-      - ./test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
+  volume:
+    - ./test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
