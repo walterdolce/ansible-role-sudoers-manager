@@ -29,3 +29,4 @@ suites:
     driver:
       provision_command:
         - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/noop/cucumber/fixtures/provision_users
+
