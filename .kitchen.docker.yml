@@ -24,12 +24,20 @@ suites:
       volume:
         - <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures:/tmp/fixtures
       provision_command:
+        - pwd
+        - ls -la
+        - ls -la /tmp
+        - ls -ls /tmp/fixtures
         - /tmp/fixtures/provision_users
   - name: multiple-profiles
     driver:
       volume:
         - <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures:/tmp/fixtures
       provision_command:
+        - pwd
+        - ls -la
+        - ls -la /tmp
+        - ls -ls /tmp/fixtures
         - /tmp/fixtures/provision_users
   - name: noop
     driver:
