@@ -36,4 +36,8 @@ suites:
       volume:
         - <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures:/tmp/fixtures
       provision_command:
+        - pwd
+        - ls -la
+        - ls -la /tmp
+        - ls -ls /tmp/fixtures
         - /tmp/fixtures/provision_users
