@@ -21,13 +21,19 @@ driver:
 suites:
   - name: single-profile
     driver:
+      volume:
+        - <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures/provision_users
       provision_command:
-        - sh -c <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures/provision_users
+        - <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures/provision_users
   - name: multiple-profiles
     driver:
+      volume:
+        - <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures/provision_users
       provision_command:
-        - sh -c <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures/provision_users
+        - <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures/provision_users
   - name: noop
     driver:
+      volume:
+        - <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures/provision_users
       provision_command:
-        - sh -c <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures/provision_users
+        - <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures/provision_users
