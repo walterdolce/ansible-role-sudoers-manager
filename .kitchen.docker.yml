@@ -16,36 +16,16 @@
 ---
 driver:
   name: docker
-  volume:
-    - <%= Dir.pwd %>/test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
 suites:
   - name: single-profile
     driver:
-      volume:
-        - <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures:/tmp/fixtures
       provision_command:
-        - pwd
-        - ls -la
-        - ls -la /tmp
-        - ls -ls /tmp/fixtures
-        - /tmp/fixtures/provision_users
+        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/single-profile/cucumber/fixtures/provision_users
   - name: multiple-profiles
     driver:
-      volume:
-        - <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures:/tmp/fixtures
       provision_command:
-        - pwd
-        - ls -la
-        - ls -la /tmp
-        - ls -ls /tmp/fixtures
-        - /tmp/fixtures/provision_users
+        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/multiple-profile/cucumber/fixtures/provision_users
   - name: noop
     driver:
-      volume:
-        - <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures:/tmp/fixtures
       provision_command:
-        - pwd
-        - ls -la
-        - ls -la /tmp
-        - ls -ls /tmp/fixtures
-        - /tmp/fixtures/provision_users
+        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/noop/cucumber/fixtures/provision_users
