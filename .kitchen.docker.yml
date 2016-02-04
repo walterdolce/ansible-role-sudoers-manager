@@ -17,4 +17,4 @@
 driver:
   name: docker
   volume:
-    - test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
+    - <%= Dir.pwd %>/test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
