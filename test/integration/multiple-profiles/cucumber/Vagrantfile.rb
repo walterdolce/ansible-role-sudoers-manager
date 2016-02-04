@@ -14,5 +14,5 @@
 #   limitations under the License.
 #
 Vagrant.configure('2') do |config|
-  config.vm.provision 'shell', inline: 'useradd john; useradd alan;'
+  config.vm.provision 'shell', inline: File.read(File.join(Dir.pwd, '/fixtures/provision_users'))
 end

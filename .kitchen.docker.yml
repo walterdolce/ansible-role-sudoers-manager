@@ -18,3 +18,16 @@ driver:
   name: docker
   volume:
     - <%= Dir.pwd %>/test/fixtures/sudoers-manager:/tmp/fixtures/sudoers-manager
+suites:
+  - name: single-profile
+    driver:
+      provision_command:
+        - sh -c <%= Dir.pwd %>/test/integration/single-profile/cucumber/fixtures/provision_users
+  - name: multiple-profiles
+    driver:
+      provision_command:
+        - sh -c <%= Dir.pwd %>/test/integration/multiple-profile/cucumber/fixtures/provision_users
+  - name: noop
+    driver:
+      provision_command:
+        - sh -c <%= Dir.pwd %>/test/integration/noop/cucumber/fixtures/provision_users
