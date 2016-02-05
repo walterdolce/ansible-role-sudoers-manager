@@ -16,23 +16,3 @@
 ---
 driver:
   name: docker
-  build_context: true
-suites:
-  - name: single-profile
-    driver:
-      provision_command:
-        - yum install -y tree
-        - ls -la /
-        - ls -la /home
-        - ls -la /home/kitchen
-        - ls -la /tmp
-        - tree /
-  - name: multiple-profiles
-#    driver:
-#      provision_command:
-#        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/multiple-profile/cucumber/fixtures/provision_users
-  - name: noop
-#    driver:
-#      provision_command:
-#        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/noop/cucumber/fixtures/provision_users
-

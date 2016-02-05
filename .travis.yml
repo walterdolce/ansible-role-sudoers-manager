@@ -18,12 +18,11 @@ language: ruby
 rvm:
   - 2.3.0
 
-sudo: true
+sudo: required
+services: docker
 
-before_script:
-  - source <(curl -sL https://raw.githubusercontent.com/zuazo/kitchen-in-travis/0.4.0/scripts/start_docker.sh)
+# https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142455888
+before_script: sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - bundle exec rake integration:docker
-after_failure:
-  - tree
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml bundle exec rake integration:docker
