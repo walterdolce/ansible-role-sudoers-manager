@@ -34,17 +34,17 @@ namespace :integration do
     task :test => [:acceptance]
 
     desc 'Run integration tests with default kitchen provider'
-    task :acceptance, [:instance] do |_t, args|
+    task :acceptance, [:instance] do |args|
         sh "bundle exec kitchen verify #{args.instance} -l debug"
     end
 
     desc 'Creates kitchen instances'
-    task :create, [:instance] do |_t, args|
+    task :create, [:instance] do |args|
         sh "bundle exec kitchen create #{args.instance} -l debug"
     end
 
     desc 'Converges kitchen instances'
-    task :converge, [:instance] do |_t, args|
+    task :converge, [:instance] do |args|
         sh "bundle exec kitchen converge #{args.instance} -l debug"
     end
 
