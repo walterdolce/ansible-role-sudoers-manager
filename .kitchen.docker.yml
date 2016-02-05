@@ -19,11 +19,12 @@ driver:
 suites:
   - name: single-profile
     driver:
+      volume:
+        - /home/travis/build/walterdolce/ansible-role-sudoers-manager:/tmp/ansible-role-sudoers-manager
       provision_command:
         - ls -la /home
         - ls -la /home/kitchen
         - ls -la /tmp
-        - ls -la /tmp/verifier
   - name: multiple-profiles
 #    driver:
 #      provision_command:
