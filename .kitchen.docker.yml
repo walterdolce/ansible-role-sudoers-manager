@@ -21,10 +21,12 @@ suites:
   - name: single-profile
     driver:
       provision_command:
+        - yum install -y tree
         - ls -la /
         - ls -la /home
         - ls -la /home/kitchen
         - ls -la /tmp
+        - tree /
   - name: multiple-profiles
 #    driver:
 #      provision_command:
