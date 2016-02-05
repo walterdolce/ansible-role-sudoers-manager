@@ -21,8 +21,6 @@ suites:
     driver:
       provision_command:
         - ls -la /home
-        - ls -la /home/travis
-        - ls -la /home/travis/build/walterdolce/ansible-role-sudoers-manager
         - ls -la /home/kitchen
   - name: multiple-profiles
 #    driver:
