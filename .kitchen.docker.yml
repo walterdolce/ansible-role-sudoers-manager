@@ -22,6 +22,7 @@ suites:
       volume:
         - /home/travis/build/walterdolce/ansible-role-sudoers-manager:/home/travis/build/walterdolce/ansible-role-sudoers-manager
       provision_command:
+        - -v /home/travis/build/walterdolce/ansible-role-sudoers-manager:/home/travis/build/walterdolce/ansible-role-sudoers-manager
         - ls -la /home
         - ls -la /home/kitchen
         - ls -la /tmp
