@@ -39,9 +39,9 @@ before_script:
 script:
   - echo 'the current working dir'
   - pwd
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:create ${INSTANCE}
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:create ${INSTANCE} --trace
   - docker ps
   - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test ${INSTANCE}:/test
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:converge ${INSTANCE}
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:verify ${INSTANCE}
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:destroy ${INSTANCE}
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:converge ${INSTANCE} --trace
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:verify ${INSTANCE} --trace
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:destroy ${INSTANCE} --trace
