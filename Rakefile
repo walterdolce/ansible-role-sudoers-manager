@@ -38,6 +38,16 @@ namespace :integration do
         sh 'bundle exec kitchen verify -l debug'
     end
 
+    desc 'Creates kitchen instances'
+    task :create do
+        sh 'bundle exec kitchen create -l debug'
+    end
+
+    desc 'Converges kitchen instances'
+    task :create do
+        sh 'bundle exec kitchen converge -l debug'
+    end
+
     desc 'Default task'
     task :default => [:test]
 end

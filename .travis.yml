@@ -24,11 +24,17 @@ services:
 
 before_install:
   - curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 0.9.0
-  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/fixtures:/tmp/fixtures
-install: chef exec bundle install
 
-# https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142455888
-before_script: sudo iptables -L DOCKER || sudo iptables -N DOCKER
+install:
+  - chef exec bundle install
+
+before_script:
+  # https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142455888
+  - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:docker
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:create
+  - docker ps
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:converge
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:verify
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:destroy
