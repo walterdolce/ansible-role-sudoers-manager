@@ -33,8 +33,11 @@ before_script:
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
+  - echo 'the current working dir'
+  - pwd
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:create
   - docker ps
+  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test testing_ansible_role:/test
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:converge
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:verify
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:destroy
