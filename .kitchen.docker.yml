@@ -16,6 +16,7 @@
 ---
 driver:
   name: docker
+  build_context: true
 platforms:
   - name: centos-7.1
     volume:
