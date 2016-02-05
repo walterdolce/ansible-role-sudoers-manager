@@ -41,7 +41,7 @@ script:
   - pwd
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen create ${INSTANCE} --trace
   - docker ps
-  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test ${INSTANCE}:/test
+  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/fixtures ${INSTANCE}:/tmp/fixtures
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen converge ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen verify ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen destroy ${INSTANCE} --trace
