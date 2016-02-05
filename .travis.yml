@@ -37,11 +37,9 @@ before_script:
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - echo 'the current working dir'
-  - pwd
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen create ${INSTANCE} --trace
-  - docker ps
   - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/fixtures ${INSTANCE}:/tmp/fixtures
+  - docker exec ${INSTANCE} /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/single-profile/cucumber/fixtures/provision_user
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen converge ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen verify ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen destroy ${INSTANCE} --trace
