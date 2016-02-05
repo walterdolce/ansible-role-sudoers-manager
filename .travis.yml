@@ -39,7 +39,8 @@ before_script:
 script:
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen create ${INSTANCE} --trace
   - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/fixtures ${INSTANCE}:/tmp/fixtures
-  - docker exec ${INSTANCE} /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/single-profile/cucumber/fixtures/provision_users
+  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration ${INSTANCE}:/tmp/integration
+  - docker exec ${INSTANCE} /tmp/integration/single-profile/cucumber/fixtures/provision_users
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen converge ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen verify ${INSTANCE} --trace
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen destroy ${INSTANCE} --trace
