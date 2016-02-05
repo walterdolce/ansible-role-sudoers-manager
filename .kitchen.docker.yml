@@ -25,6 +25,7 @@ suites:
   - name: single-profile
     driver:
       provision_command:
+        - ls -la /
         - ls -la /home
         - ls -la /home/kitchen
         - ls -la /tmp
