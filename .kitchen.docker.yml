@@ -22,6 +22,8 @@ suites:
       provision_command:
         - ls -la /home
         - ls -la /home/kitchen
+        - ls -la /tmp
+        - ls -la /tmp/verifier
   - name: multiple-profiles
 #    driver:
 #      provision_command:
