@@ -35,7 +35,7 @@ namespace :integration do
 
     desc 'Run integration tests with default kitchen provider'
     task :acceptance do
-        sh 'bundle exec kitchen test -l debug'
+        sh 'bundle exec kitchen verify -l debug'
     end
 
     desc 'Default task'
