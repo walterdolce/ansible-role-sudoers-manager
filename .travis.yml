@@ -26,4 +26,4 @@ before_script:
 script:
   - bundle exec rake integration:docker
 after_failure:
-  - cat docker_daemon.log
+  - tree
