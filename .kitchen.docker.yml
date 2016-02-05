@@ -20,13 +20,16 @@ suites:
   - name: single-profile
     driver:
       provision_command:
-        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/single-profile/cucumber/fixtures/provision_users
+        - ls -la /home
+        - ls -la /home/travis
+        - ls -la /home/travis/build/walterdolce/ansible-role-sudoers-manager
+        - ls -la /home/kitchen
   - name: multiple-profiles
-    driver:
-      provision_command:
-        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/multiple-profile/cucumber/fixtures/provision_users
+#    driver:
+#      provision_command:
+#        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/multiple-profile/cucumber/fixtures/provision_users
   - name: noop
-    driver:
-      provision_command:
-        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/noop/cucumber/fixtures/provision_users
+#    driver:
+#      provision_command:
+#        - /home/travis/build/walterdolce/ansible-role-sudoers-manager/test/integration/noop/cucumber/fixtures/provision_users
 
