@@ -22,6 +22,10 @@ sudo: required
 services:
   - docker
 
+env:
+  matrix:
+    - INSTANCE=single-profile-centos-71
+
 before_install:
   - curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 0.9.0
 
@@ -33,11 +37,12 @@ before_script:
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml
   - echo 'the current working dir'
   - pwd
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:create
+  - chef exec bundle exec rake integration:create ${INSTANCE}
   - docker ps
-  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test testing_ansible_role:/test
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:converge
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:verify
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec rake integration:destroy
+  - docker cp /home/travis/build/walterdolce/ansible-role-sudoers-manager/test ${INSTANCE}:/test
+  - chef exec bundle exec rake integration:converge ${INSTANCE}
+  - chef exec bundle exec rake integration:verify ${INSTANCE}
+  - chef exec bundle exec rake integration:destroy ${INSTANCE}

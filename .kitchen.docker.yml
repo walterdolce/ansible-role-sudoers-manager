@@ -17,4 +17,3 @@
 driver:
   name: docker
   privileged: true
-  instance_name: testing_ansible_role

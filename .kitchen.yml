@@ -32,21 +32,22 @@ suites:
   - name: single-profile
     driver:
       provision: true
+      instance_name: single-profile-centos-71
       vagrantfiles:
         - './test/integration/single-profile/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
-  - name: multiple-profiles
-    driver:
-      provision: true
-      vagrantfiles:
-        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
-    provisioner:
-      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
-  - name: noop
-    driver:
-      provision: true
-      vagrantfiles:
-        - './test/integration/noop/cucumber/Vagrantfile.rb'
-    provisioner:
-      playbook: './test/integration/noop/cucumber/test-playbook.yml'
+#  - name: multiple-profiles
+#    driver:
+#      provision: true
+#      vagrantfiles:
+#        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
+#    provisioner:
+#      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
+#  - name: noop
+#    driver:
+#      provision: true
+#      vagrantfiles:
+#        - './test/integration/noop/cucumber/Vagrantfile.rb'
+#    provisioner:
+#      playbook: './test/integration/noop/cucumber/test-playbook.yml'
