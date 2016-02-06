@@ -15,9 +15,14 @@
 #
 ---
 driver:
+  <% if ENV['TRAVIS'] -%>
+  name: docker
+  privileged: true
+  <% else %>
   name: vagrant
   synced_folders:
     - ['./test/fixtures/sudoers-manager', "/tmp/fixtures/sudoers-manager", 'create: true']
+  <% end %>
 
 provisioner:
   ansible_inventory_file: 'test/test-inventory'
