@@ -37,11 +37,10 @@ before_script:
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - chef exec bundle exec kitchen create ${INSTANCE} --trace
-  - env
+  - chef exec bundle exec kitchen create ${INSTANCE}
   - docker cp ${TRAVIS_BUILD_DIR}/test/fixtures ${INSTANCE}:/tmp/fixtures
   - docker cp ${TRAVIS_BUILD_DIR}/test/integration ${INSTANCE}:/tmp/integration
   - docker exec ${INSTANCE} sh -c 'source /tmp/integration/single-profile/cucumber/fixtures/provision_users'
-  - chef exec bundle exec kitchen converge ${INSTANCE} --trace
-  - chef exec bundle exec kitchen verify ${INSTANCE} --trace
-  - chef exec bundle exec kitchen destroy ${INSTANCE} --trace
+  - chef exec bundle exec kitchen converge ${INSTANCE}
+  - chef exec bundle exec kitchen verify ${INSTANCE}
+  - chef exec bundle exec kitchen destroy ${INSTANCE}
