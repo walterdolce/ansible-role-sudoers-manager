@@ -38,7 +38,8 @@ before_script:
 
 script:
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen create ${INSTANCE} --trace
-  - docker cp ${TRAVIS_BUILD_DIR}test/fixtures ${INSTANCE}:/tmp/fixtures
+  - env
+  - docker cp ${TRAVIS_BUILD_DIR}/test/fixtures ${INSTANCE}:/tmp/fixtures
   - docker cp ${TRAVIS_BUILD_DIR}/test/integration ${INSTANCE}:/tmp/integration
   - docker exec ${INSTANCE} sh -c 'source /tmp/integration/single-profile/cucumber/fixtures/provision_users'
   - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen converge ${INSTANCE} --trace
