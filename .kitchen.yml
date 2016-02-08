@@ -29,18 +29,13 @@ provisioner:
   ansible_inventory_file: 'test/test-inventory'
   ansible_verbose: true
   ansible_verbosity: 4
+  idempotency_test: true
   name: ansible_playbook
 
 platforms:
   - name: centos-7.1
 
 suites:
-  - name: single-profile
-    driver:
-      vagrantfiles:
-        - './test/integration/single-profile/cucumber/Vagrantfile.rb'
-    provisioner:
-      playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
   - name: multiple-profiles
     driver:
       vagrantfiles:
@@ -53,3 +48,9 @@ suites:
         - './test/integration/noop/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/noop/cucumber/test-playbook.yml'
+  - name: single-profile
+    driver:
+      vagrantfiles:
+        - './test/integration/single-profile/cucumber/Vagrantfile.rb'
+    provisioner:
+      playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
