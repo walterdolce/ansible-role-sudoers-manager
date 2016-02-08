@@ -24,5 +24,5 @@ group :development do
 end
 
 group :docker do
-    gem 'kitchen-docker', '2.3.0'
+    gem 'kitchen-docker', '3.0.0', git: 'https://github.com/walterdolce/kitchen-docker.git'
 end

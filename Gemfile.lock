@@ -6,6 +6,13 @@ GIT
       librarian-ansible
       test-kitchen (~> 1.4)
 
+GIT
+  remote: https://github.com/walterdolce/kitchen-docker.git
+  revision: 1f21c63f255c55239d0fca00a4c24a09c4c0ff0b
+  specs:
+    kitchen-docker (3.0.0)
+      test-kitchen (= 1.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -16,8 +23,6 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     highline (1.7.8)
-    kitchen-docker (2.3.0)
-      test-kitchen (>= 1.0.0)
     kitchen-vagrant (0.19.0)
       test-kitchen (~> 1.4)
     librarian (0.1.2)
@@ -28,7 +33,7 @@ GEM
       librarian (~> 0.1.0)
     mixlib-config (2.2.1)
     mixlib-install (0.7.1)
-    mixlib-shellout (2.2.5)
+    mixlib-shellout (2.2.6)
     multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -60,7 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   kitchen-ansible (= 0.0.38)!
-  kitchen-docker (= 2.3.0)
+  kitchen-docker (= 3.0.0)!
   kitchen-vagrant (= 0.19.0)
   rake (= 10.5.0)
   rubocop (= 0.36.0)

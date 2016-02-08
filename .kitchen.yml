@@ -20,8 +20,9 @@ driver:
   privileged: true
   <% else %>
   name: vagrant
+  provision: true
   synced_folders:
-    - ['./test/fixtures/sudoers-manager', "/tmp/fixtures/sudoers-manager", 'create: true']
+    - ['./test/fixtures/sudoers-manager', '/tmp/fixtures/sudoers-manager', 'create: true']
   <% end %>
 
 provisioner:
@@ -36,22 +37,18 @@ platforms:
 suites:
   - name: single-profile
     driver:
-      provision: true
-      instance_name: single-profile-centos-71
       vagrantfiles:
         - './test/integration/single-profile/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
 #  - name: multiple-profiles
 #    driver:
-#      provision: true
 #      vagrantfiles:
 #        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
 #    provisioner:
 #      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
 #  - name: noop
 #    driver:
-#      provision: true
 #      vagrantfiles:
 #        - './test/integration/noop/cucumber/Vagrantfile.rb'
 #    provisioner:
