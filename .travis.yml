@@ -40,7 +40,7 @@ script:
   - chef exec bundle exec kitchen create ${SUITE}-${PLATFORM}
   - docker cp ${TRAVIS_BUILD_DIR}/test/fixtures ${SUITE}-${PLATFORM}:/tmp/fixtures
   - docker cp ${TRAVIS_BUILD_DIR}/test/integration ${SUITE}-${PLATFORM}:/tmp/integration
-  - docker exec ${SUITE}-${PLATFORM} sh -c 'source /tmp/integration/${SUITE}/cucumber/fixtures/provision_users'
+  - docker exec ${SUITE}-${PLATFORM} sh -c "source /tmp/integration/${SUITE}/cucumber/fixtures/provision_users"
   - chef exec bundle exec kitchen converge ${SUITE}-${PLATFORM}
   - chef exec bundle exec kitchen verify ${SUITE}-${PLATFORM}
   - chef exec bundle exec kitchen destroy ${SUITE}-${PLATFORM}
