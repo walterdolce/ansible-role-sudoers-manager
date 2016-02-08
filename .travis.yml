@@ -24,7 +24,7 @@ services:
 
 env:
   matrix:
-    - INSTANCE=single-profile-centos-71
+    - SUITE=single-profile PLATFORM=centos-71
 
 before_install:
   - curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 0.9.0
@@ -37,10 +37,10 @@ before_script:
   - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - chef exec bundle exec kitchen create ${INSTANCE}
-  - docker cp ${TRAVIS_BUILD_DIR}/test/fixtures ${INSTANCE}:/tmp/fixtures
-  - docker cp ${TRAVIS_BUILD_DIR}/test/integration ${INSTANCE}:/tmp/integration
-  - docker exec ${INSTANCE} sh -c 'source /tmp/integration/single-profile/cucumber/fixtures/provision_users'
-  - chef exec bundle exec kitchen converge ${INSTANCE}
-  - chef exec bundle exec kitchen verify ${INSTANCE}
-  - chef exec bundle exec kitchen destroy ${INSTANCE}
+  - chef exec bundle exec kitchen create ${SUITE}-${PLATFORM}
+  - docker cp ${TRAVIS_BUILD_DIR}/test/fixtures ${SUITE}-${PLATFORM}:/tmp/fixtures
+  - docker cp ${TRAVIS_BUILD_DIR}/test/integration ${SUITE}-${PLATFORM}:/tmp/integration
+  - docker exec ${INSTANCE} sh -c 'source /tmp/integration/${SUITE}/cucumber/fixtures/provision_users'
+  - chef exec bundle exec kitchen converge ${SUITE}-${PLATFORM}
+  - chef exec bundle exec kitchen verify ${SUITE}-${PLATFORM}
+  - chef exec bundle exec kitchen destroy ${SUITE}-${PLATFORM}

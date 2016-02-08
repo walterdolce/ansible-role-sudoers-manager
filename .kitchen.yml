@@ -41,15 +41,15 @@ suites:
         - './test/integration/single-profile/cucumber/Vagrantfile.rb'
     provisioner:
       playbook: './test/integration/single-profile/cucumber/test-playbook.yml'
-#  - name: multiple-profiles
-#    driver:
-#      vagrantfiles:
-#        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
-#    provisioner:
-#      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
-#  - name: noop
-#    driver:
-#      vagrantfiles:
-#        - './test/integration/noop/cucumber/Vagrantfile.rb'
-#    provisioner:
-#      playbook: './test/integration/noop/cucumber/test-playbook.yml'
+  - name: multiple-profiles
+    driver:
+      vagrantfiles:
+        - './test/integration/multiple-profiles/cucumber/Vagrantfile.rb'
+    provisioner:
+      playbook: './test/integration/multiple-profiles/cucumber/test-playbook.yml'
+  - name: noop
+    driver:
+      vagrantfiles:
+        - './test/integration/noop/cucumber/Vagrantfile.rb'
+    provisioner:
+      playbook: './test/integration/noop/cucumber/test-playbook.yml'
