@@ -24,6 +24,9 @@ services:
 
 env:
   matrix:
+    - SUITE=single-profile PLATFORM=centos-70
+    - SUITE=multiple-profiles PLATFORM=centos-70
+    - SUITE=noop PLATFORM=centos-70
     - SUITE=single-profile PLATFORM=centos-71
     - SUITE=multiple-profiles PLATFORM=centos-71
     - SUITE=noop PLATFORM=centos-71
