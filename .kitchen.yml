@@ -33,14 +33,14 @@ provisioner:
   name: ansible_playbook
 
 platforms:
-  - name: opscode-centos-6.3-i386
-  - name: opscode-centos-6.3
+  - name: centos-6.3-i386
+  - name: centos-6.3
   - name: centos-6.4-i386
   - name: centos-6.4
   - name: centos-6.5-i386
   - name: centos-6.5
-  - name: puppet/centos-6.6-32-puppet
-  - name: puppet/centos-6.6-64-puppet
+  - name: centos-6.6-32-puppet
+  - name: centos-6.6-64-puppet
   - name: centos-6.7-i386
   - name: centos-6.7
   - name: centos-7.0
