@@ -27,6 +27,9 @@ env:
     - SUITE=single-profile PLATFORM=centos-71
     - SUITE=multiple-profiles PLATFORM=centos-71
     - SUITE=noop PLATFORM=centos-71
+    - SUITE=single-profile PLATFORM=centos-72
+    - SUITE=multiple-profiles PLATFORM=centos-72
+    - SUITE=noop PLATFORM=centos-72
 
 before_install:
   - curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 0.9.0
