@@ -34,6 +34,7 @@ provisioner:
 
 platforms:
   - name: centos-7.1
+  - name: centos-7.2
 
 suites:
   - name: multiple-profiles
