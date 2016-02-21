@@ -24,30 +24,6 @@ services:
 
 env:
   matrix:
-    - SUITE=single-profile PLATFORM=centos-58-i386
-    - SUITE=multiple-profiles PLATFORM=centos-58-i386
-    - SUITE=noop PLATFORM=centos-58-i386
-    - SUITE=single-profile PLATFORM=centos-58
-    - SUITE=multiple-profiles PLATFORM=centos-58
-    - SUITE=noop PLATFORM=centos-58
-    - SUITE=single-profile PLATFORM=centos-59-i386
-    - SUITE=multiple-profiles PLATFORM=centos-59-i386
-    - SUITE=noop PLATFORM=centos-59-i386
-    - SUITE=single-profile PLATFORM=centos-59
-    - SUITE=multiple-profiles PLATFORM=centos-59
-    - SUITE=noop PLATFORM=centos-59
-    - SUITE=single-profile PLATFORM=centos-510-i386
-    - SUITE=multiple-profiles PLATFORM=centos-510-i386
-    - SUITE=noop PLATFORM=centos-510-i386
-    - SUITE=single-profile PLATFORM=centos-510
-    - SUITE=multiple-profiles PLATFORM=centos-510
-    - SUITE=noop PLATFORM=centos-510
-    - SUITE=single-profile PLATFORM=centos-511-i386
-    - SUITE=multiple-profiles PLATFORM=centos-511-i386
-    - SUITE=noop PLATFORM=centos-511-i386
-    - SUITE=single-profile PLATFORM=centos-511
-    - SUITE=multiple-profiles PLATFORM=centos-511
-    - SUITE=noop PLATFORM=centos-511
     - SUITE=single-profile PLATFORM=centos-63-i386
     - SUITE=multiple-profiles PLATFORM=centos-63-i386
     - SUITE=noop PLATFORM=centos-63-i386
