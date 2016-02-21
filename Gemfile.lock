@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/walterdolce/kitchen-ansible.git
-  revision: 1f6f9f5f8fcedf8460223773fd44c2a34a9058ae
+  revision: 4e5265e8b852be797b427ecf9199d8efc4f36c5a
   specs:
     kitchen-ansible (0.0.38)
       librarian-ansible
@@ -17,7 +17,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.2.0)
-    chef-config (12.6.0)
+    chef-config (12.7.2)
       mixlib-config (~> 2.0)
       mixlib-shellout (~> 2.0)
     faraday (0.9.2)
@@ -38,7 +38,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
-    parser (2.3.0.2)
+    parser (2.3.0.6)
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
