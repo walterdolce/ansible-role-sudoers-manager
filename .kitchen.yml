@@ -33,14 +33,6 @@ provisioner:
   name: ansible_playbook
 
 platforms:
-  - name: centos-5.8-i386
-  - name: centos-5.8
-  - name: centos-5.9-i386
-  - name: centos-5.9
-  - name: centos-5.10-i386
-  - name: centos-5.10
-  - name: centos-5.11-i386
-  - name: centos-5.11
   - name: centos-6.3-i386
   - name: centos-6.3
   - name: centos-6.4-i386
