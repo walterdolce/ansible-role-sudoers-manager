@@ -15,11 +15,11 @@ Role Variables
 
 The role provides no default variables. It only provides a
 variable you can set to manage multiple sudoers profiles.
-Given the `sudoers_manager_sudoers_profiles` is properly set,
-the role will create a file in the `sudoers.d` folder for each
-profile it will find defined in it.
+Once the `sudoers_manager_sudoers_profiles` dictionary is properly
+set, the role will create a file in the `sudoers.d` folder for
+each profile it will find defined in it.
 
-In order for the sudoers profiles to be created/managed when
+In order for the sudoers profiles to be created/managed during
 provisioning, each `sudoers_manager_sudoers_profiles` dictionary
 item must have three keys defined. Those are `profile_dir`,
 `profile_name` and `template_path`, as you can see below.
